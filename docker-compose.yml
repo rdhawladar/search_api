@@ -20,7 +20,7 @@ services:
     build:
       context: ./
     volumes:
-      - ./php/:/var/www/html/
+      - .:/var/www/html/
     ports:
       - 8000:80
     depends_on:
