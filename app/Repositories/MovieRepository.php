@@ -2,7 +2,7 @@
 namespace App\Repositories;
 
 use App\Interfaces\MovieRepositoryInterface;
-use App\Models\Movie;
+use App\Models\Restaurant;
 use App\Models\User;
 use DB;
 use Carbon\Carbon;
@@ -11,6 +11,8 @@ class MovieRepository implements MovieRepositoryInterface
 {
     public function fetchList($params)
     {
+        $data = Restaurant::get();
+        dd($data);
         $params->has('related_project') ?
             $limit = Config('constants.related_movie_limit') :
             $limit = Config('constants.list_item_per_req');

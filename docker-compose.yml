@@ -10,7 +10,7 @@ services:
         restart: always
         environment:
           - MYSQL_ROOT_PASSWORD=root
-          - MYSQL_DATABASE=my_db
+          - MYSQL_DATABASE=restaurants
           - MYSQL_USER=root
           - MYSQL_PASSWORD=root
         ports:

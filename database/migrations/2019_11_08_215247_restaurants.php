@@ -15,26 +15,26 @@ class Restaurants extends Migration
     {
         Schema::create('restaurants', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('branch');
-            $table->string('phone');
-            $table->string('email');
-            $table->string('logo');
-            $table->string('address');
-            $table->string('housenumber');
-            $table->string('postcode');
-            $table->string('city');
-            $table->string('latitude');
-            $table->string('longitude');
-            $table->string('url');
-            $table->integer('open');
-            $table->integer('bestMatch');
-            $table->integer('newestScore');
-            $table->integer('ratingAverage');
-            $table->integer('popularity');
-            $table->string('averageProductPrice');
-            $table->string('deliveryCosts');
-            $table->string('minimumOrderAmount');
+            $table->string('name')->nullable();
+            $table->string('branch')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('email')->nullable();
+            $table->string('logo')->nullable();
+            $table->string('address')->nullable();
+            $table->string('housenumber')->nullable();
+            $table->string('postcode')->nullable();
+            $table->string('city')->nullable();
+            $table->string('latitude')->nullable();
+            $table->string('longitude')->nullable();
+            $table->string('url')->nullable();
+            $table->integer('open')->nullable();
+            $table->integer('bestMatch')->nullable();
+            $table->integer('newestScore')->nullable();
+            $table->integer('ratingAverage')->nullable();
+            $table->integer('popularity')->nullable();
+            $table->string('averageProductPrice')->nullable();
+            $table->string('deliveryCosts')->nullable();
+            $table->string('minimumOrderAmount')->nullable();
         });
     }
     /**

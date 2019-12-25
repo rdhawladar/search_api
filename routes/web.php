@@ -16,7 +16,7 @@
 });
 
 $router->group(['prefix' => 'api'], function () use ($router) {
-    $router->get('movie-list', ['as' => 'MovieList', 'uses' => 'MovieController@getList']);
+    $router->get('restaurants', ['as' => 'MovieList', 'uses' => 'MovieController@getList']);
     $router->get('movie/{slug}', ['as' => 'MovieDetails', 'uses' => 'MovieController@getDetails']);
     $router->get('user-count', ['as' => 'UserCount', 'uses' => 'MovieController@userCount']);
 });

@@ -13,6 +13,7 @@ COPY . /var/www/html/
 #ADD .env.example /src/.env
 WORKDIR /var/www/html/
 #RUN chmod -R 777 storage
-RUN composer install 
+RUN composer install
+CMD php artisan migrate --seed
 EXPOSE 80
 CMD php -S 0.0.0.0:80 -t public
