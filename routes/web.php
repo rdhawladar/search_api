@@ -2,21 +2,22 @@
 
 /*
 |--------------------------------------------------------------------------
-| Application Routes
+| Application API End Points
 |--------------------------------------------------------------------------
 |
-| Here is where you can register all of the routes for an application.
-| It is a breeze. Simply tell Lumen the URIs it should respond to
-| and give it the Closure to call when that URI is requested.
+| Here is where you can get all of the endpoints for this application.
 |
  */
 
- $router->get('/', function () {
+$router->get('/', function () {
     return view('welcome');
 });
 
-$router->group(['prefix' => 'api'], function () use ($router) {
-    $router->get('restaurants', ['as' => 'MovieList', 'uses' => 'MovieController@getList']);
-    $router->get('movie/{slug}', ['as' => 'MovieDetails', 'uses' => 'MovieController@getDetails']);
-    $router->get('user-count', ['as' => 'UserCount', 'uses' => 'MovieController@userCount']);
+
+$router->group(['prefix' => 'api/v1'], function () use ($router) {
+    $router->get('restaurants', ['as' => 'RestaurantList', 'uses' => 'Api\v1\RestaurantController@getList']);
+});
+
+$router->group(['prefix' => 'api/v2'], function () use ($router) {
+    $router->get('restaurants', ['as' => 'RestaurantList', 'uses' => 'Api\v2\RestaurantController@getList']);
 });

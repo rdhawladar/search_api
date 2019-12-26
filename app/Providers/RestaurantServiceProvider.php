@@ -3,21 +3,21 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Repositories\MovieRepository;
-use App\Interfaces\MovieRepositoryInterface;
+use App\Repositories\Api\v2\RestaurantRepository;
+use App\Interfaces\RestaurantRepositoryInterface;
 
-class MovieServiceProvider extends ServiceProvider
+class RestaurantServiceProvider extends ServiceProvider
 {
     /**
-     * Register any application services.
+     * Register Restaurant application services.
      *
      * @return void
      */
     public function register()
     {
         $this->app->bind(
-            MovieRepositoryInterface::class, 
-            MovieRepository::class
+            RestaurantRepositoryInterface::class,
+            RestaurantRepository::class
         );
     }
 
