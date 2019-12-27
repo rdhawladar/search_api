@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories\Api\v2;
+namespace App\Repositories;
 
 use App\Interfaces\RestaurantRepositoryInterface;
 use App\Models\Restaurant;
@@ -21,9 +21,9 @@ class RestaurantRepository implements RestaurantRepositoryInterface
     public function fetchData($sortBy, $q = null)
     {
         !$sortBy && $sortBy = Config('constants.defaultSortValue');
-        $data = Restaurant::select('id', 'name as RestaurantName', 'restaurants.*');
+        $data = Restaurant::select();
         $q && $data = $data->where('name', 'LIKE', '%' . $q . '%');
-        return $data->orderBy($sortBy, 'ASC')->get()->makeHidden('name');
+        return $data->orderBy($sortBy, 'ASC')->get();
     }
 
     /**

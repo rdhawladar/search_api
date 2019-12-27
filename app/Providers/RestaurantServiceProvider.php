@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Repositories\Api\v2\RestaurantRepository;
+use App\Repositories\RestaurantRepository;
 use App\Interfaces\RestaurantRepositoryInterface;
 
 class RestaurantServiceProvider extends ServiceProvider

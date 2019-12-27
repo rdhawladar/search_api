@@ -1,20 +1,5 @@
 version: '2'
 services:
-  mysql:
-        image: mysql:8.0
-        container_name: mysql-server-80
-        command: --default-authentication-plugin=mysql_native_password
-#        working_dir: /application
-        volumes:
-          - .:/application
-        restart: always
-        environment:
-          - MYSQL_ROOT_PASSWORD=root
-          - MYSQL_DATABASE=restaurants
-          - MYSQL_USER=root
-          - MYSQL_PASSWORD=root
-        ports:
-          - "8082:3306"
   website:
     container_name: php72
     build:
@@ -25,3 +10,16 @@ services:
       - 8000:80
     depends_on:
       - mysql
+  mysql:
+        image: mysql:8.0
+        container_name: mysql-server-80
+        command: --default-authentication-plugin=mysql_native_password
+        restart: always
+        environment:
+          - MYSQL_DATABASE=${DB_DATABASE}
+          - MYSQL_USER=${DB_USERNAME}
+          - MYSQL_PASSWORD=${DB_PASSWORD}
+          - MYSQL_ROOT_PASSWORD={MYSQL_ROOT_PASSWORD}
+        restart: 'always'
+        ports:
+          - 13306:3306

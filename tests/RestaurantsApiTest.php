@@ -3,7 +3,7 @@
 use Laravel\Lumen\Testing\DatabaseMigrations;
 use Laravel\Lumen\Testing\DatabaseTransactions;
 
-class UsersTest extends TestCase
+class RestaurantsApiTest extends TestCase
 {
     use RefreshDatabase;
     /**

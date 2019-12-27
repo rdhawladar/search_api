@@ -12,8 +12,11 @@ RUN mv composer /usr/local/bin/
 COPY . /var/www/html/
 #ADD .env.example /src/.env
 WORKDIR /var/www/html/
-#RUN chmod -R 777 storage
+RUN chmod -R 777 storage
 RUN composer install
-CMD php artisan migrate --seed
+#RUN php artisan config:clear
+RUN composer dump
+RUN php artisan migrate:fresh
+RUN php artisan db:seed
 EXPOSE 80
 CMD php -S 0.0.0.0:80 -t public
