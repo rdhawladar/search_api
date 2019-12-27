@@ -18,6 +18,6 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->get('restaurants', ['as' => 'RestaurantList', 'uses' => 'Api\v1\RestaurantController@getList']);
 });
 
-$router->group(['prefix' => 'api/v2'], function () use ($router) {
-    $router->get('restaurants', ['as' => 'RestaurantList', 'uses' => 'Api\v2\RestaurantController@getList']);
+$router->group(['prefix' => 'api/v5'], function () use ($router) {
+    $router->get('restaurants', ['as' => 'RestaurantList', 'uses' => 'api\v5\RestaurantController@getList']);
 });

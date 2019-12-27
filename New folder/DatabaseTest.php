@@ -3,9 +3,9 @@
 use Laravel\Lumen\Testing\DatabaseMigrations;
 use Laravel\Lumen\Testing\DatabaseTransactions;
 
-class RestaurantsApiTest extends TestCase
+class DatabaseTest extends TestCase
 {
-    use RefreshDatabase;
+    // use RefreshDatabase;
     /**
      * A basic test example.
      *
@@ -13,11 +13,9 @@ class RestaurantsApiTest extends TestCase
      */
     public function testExample()
     {
-        // $this->get('/');
-
-        /*$this->assertEquals(
-            $this->app->version(), $this->response->getContent()
-        );*/
+        /* $this->assertDatabaseHas('restaurants', [
+            'email' => 'ko@sushikings.nl',
+        ]); */
         $this->assertTrue(true);
     }
     

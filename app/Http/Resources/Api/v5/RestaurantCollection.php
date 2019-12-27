@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Http\Resources\Api\v2;
+namespace App\Http\Resources\api\v5;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class RestaurantCollection extends ResourceCollection
 {
-
-
- public function __construct($resource, $result)
+    public function __construct($resource, $result)
     {
         // Ensure you call the parent constructor
         parent::__construct($resource);
@@ -23,16 +21,13 @@ class RestaurantCollection extends ResourceCollection
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-
     public function toArray($request)
     {
-
         return $this->collection;
     }
 
-
-
-    public function with($request) {
+    public function with($request)
+    {
         return $this->result;
     }
 }

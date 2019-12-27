@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Api\v2;
+namespace App\Http\Controllers\api\v5;
 
 use Illuminate\Http\Request;
-use App\Services\RestaurantService;
+use App\Services\api\v5\RestaurantService;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\Api\v2\RestaurantCollection as RestaurantCollection;
 
 class RestaurantController extends Controller
 {
@@ -28,8 +27,6 @@ class RestaurantController extends Controller
     public function getList(Request $request)
     {
         $response = $this->restaurantService->listData($request);
-        if(!$response['data'])
-            return $response;
-        return new RestaurantCollection(collect($response['data']), $response);
+        return $response;
     }
 }

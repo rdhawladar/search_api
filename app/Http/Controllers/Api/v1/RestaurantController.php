@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api\v1;
 
 use Illuminate\Http\Request;
-use App\Services\RestaurantService;
+use App\Services\Api\v1\RestaurantService;
 use App\Http\Controllers\Controller;
 
 class RestaurantController extends Controller

@@ -10,7 +10,8 @@ return [
     'messages' => [
         'success' => 'Data fetched successuly.',
         'fail' => 'Sorry! Can not process your request because of wrong parameter.',
-        'invalidSortValue' => 'Please provide a valid value for sorting.'
+        'invalidSortValue' => 'Please provide a valid value for sorting.',
+        'emptyData' => 'No data found based on your request.'
     ],
     'error_type' => 'PARAM_MISMATCH',
     'numbers' => [
@@ -28,6 +29,7 @@ return [
     ],
     'status' => [
         'OK' => 200,
+        'EMPTY_DATA' => 203,
         'BAD_REQUEST' => 400,
         'UNAUTHORIZED' => 401
     ],

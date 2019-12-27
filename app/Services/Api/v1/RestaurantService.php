@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\Api\v1;
 
 use App\Interfaces\RestaurantRepositoryInterface;
 use App\Interfaces\RestaurantServiceInterface;
