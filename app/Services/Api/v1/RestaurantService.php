@@ -39,7 +39,11 @@ class RestaurantService implements RestaurantServiceInterface
     {
         $result['message'] =  $this->message;
         $result['code'] =  $this->code;
-        $result['data'] =  $this->data;
+        if ($this->data) {
+            $result['data'] =  $this->data;
+            is_array($result['data']) &&
+                $result['total_data'] = count($result['data']);
+        }
         return $result;
     }
 
@@ -64,6 +68,9 @@ class RestaurantService implements RestaurantServiceInterface
             }
         }
         $this->data = $this->restaurantsRepository->fetchData($sortBy, $searchBy);
+        if (count($this->data) == Config('constants.numbers.ZERO')) {
+            $this->message = Config('constants.messages.emptyData');
+        }
         return $this->getResult();
     }
 }

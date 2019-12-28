@@ -13,7 +13,6 @@ $router->get('/', function () {
     return view('welcome');
 });
 
-
 $router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->get('restaurants', ['as' => 'RestaurantList', 'uses' => 'Api\v1\RestaurantController@getList']);
 });

@@ -12,6 +12,7 @@ class Restaurant extends Model
      * @var array
      */
     protected $fillable = [];
+    
     public static $sortValues = [
         'bestmatch' => 'bestMatch' ,
         'newest' => 'newestScore',

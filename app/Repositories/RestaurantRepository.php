@@ -35,7 +35,7 @@ class RestaurantRepository implements RestaurantRepositoryInterface
     public function isSortValueExists($value)
     {
         $sortValues = Restaurant::$sortValues;
-        $value = preg_replace('/\s/', '', $value);
+        $value = strtolower(preg_replace('/\s/', '', $value));
         if (!isset($sortValues[$value])) {
             return false;
         }

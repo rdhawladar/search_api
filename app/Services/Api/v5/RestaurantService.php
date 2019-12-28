@@ -65,7 +65,6 @@ class RestaurantService implements RestaurantServiceInterface
         $data = $this->restaurantsRepository->fetchData($sortBy, $searchBy);
         if (count($data) == 0) {
             $this->message = Config('constants.messages.emptyData');
-            $this->code = Config('constants.status.EMPTY_DATA');
         }
         $meta = $this->getMeta();
         $meta['total_data'] = count($data);

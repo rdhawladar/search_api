@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit;
+namespace tests\Unit;
 
 use TestCase;
 
@@ -18,7 +18,7 @@ class RouteTest extends TestCase
     }
 
     /**
-     * Route test -> version 1 api route
+     * Route test -> version 1 restaurants api route
      *
      * @return void
      */
@@ -29,7 +29,7 @@ class RouteTest extends TestCase
     }
 
     /**
-     * Route test -> version 5 api route
+     * Route test -> version 5 restaurants api route
      *
      * @return void
      */
