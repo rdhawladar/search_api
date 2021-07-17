@@ -40,7 +40,9 @@ Copy/rename `.env.example` file as `.env`. No need to change anything. It contai
 
 #### Step-2
 Start application using docker-compose file. Run this following command:
-```bash docker-compose up -d ```
+```bash 
+docker-compose up -d 
+```
 
 Now you can see the wolcome message to the following link: [localhost:8000](http://localhost:8000)
 
